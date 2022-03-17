@@ -25,6 +25,7 @@ public class AppTest
     @Before
     public void setUp(){
         System.out.println("seteando ");
+        System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
