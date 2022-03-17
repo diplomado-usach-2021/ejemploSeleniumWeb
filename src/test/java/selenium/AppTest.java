@@ -80,8 +80,9 @@ public class AppTest
         WebElement searchbox = driver.findElement(By.name("q"));
         searchbox.sendKeys("HandBook Devops");
         searchbox.submit();
-        WebElement searchbox1 = driver.findElement(By.cssSelector(".sbre .wM6W7d"));
-        searchbox1.submit();
+      //  WebElement searchbox1 = driver.findElement(By.cssSelector(".sbre .wM6W7d"));
+       // searchbox.sendKeys("HandBook Devops");
+       // searchbox.submit();
 
         System.out.println("driver.getTitle() : " + driver.getTitle());
         assertEquals("HandBook Devops - Buscar con Google", driver.getTitle());
