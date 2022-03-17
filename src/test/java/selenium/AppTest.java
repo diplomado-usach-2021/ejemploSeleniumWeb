@@ -27,16 +27,23 @@ public class AppTest
         driver.manage().window().maximize();
         System.out.println(driver.getCurrentUrl());
         System.out.println(driver.getTitle());
-        driver.navigate().to("https://www.google.com");
+        //driver.navigate().to("https://www.google.com");
     }
 
     @Test
     public void shouldAnswerWithTrue()
     {
+        
         System.out.println("Iniciando Pruebas...");
-        WebElement searchbox = driver.findElement(By.name("q"));
-        searchbox.sendKeys("HandBook Devops");
+        WebElement searchbox = driver.findElement(By.id("twotabsearchtextbox"));
+        searchbox.sendKeys("The Phoenix Project");
         searchbox.submit();
-        assertEquals("HandBook Devops", driver.getTitle());
+        System.out.println("driver.getTitle() : " + driver.getTitle());
+        assertEquals("Amazon.com : The Phoenix Project", driver.getTitle());
+
+
     }
+
+
+
 }
