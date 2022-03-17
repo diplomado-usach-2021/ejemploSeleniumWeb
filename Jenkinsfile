@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('jmeter test') {
+        stage('selenium test') {
             steps {
               sh "mvn test"
             }
