@@ -37,10 +37,16 @@ public class AppTest
         WebElement searchbox = driver.findElement(By.name("q"));
         searchbox.sendKeys("handbook devops");
         searchbox.submit();
-        driver.findElement(By.linkText("Shopping")).click();
-        WebElement resultGrid = driver.findElement(By.className("op4oU"));
-        WebElement theBook = resultGrid.findElement(By.cssSelector("div:first-child"));
-        theBook.click();
+        try {
+            Thread.sleep(1000);
+            driver.findElement(By.linkText("Shopping")).click();
+            Thread.sleep(1000);
+            WebElement resultGrid = driver.findElement(By.className("op4oU"));
+            WebElement theBook = resultGrid.findElement(By.cssSelector("div:first-child"));
+            theBook.click();
+        }catch(Exception e) {
+            System.out.println(e);
+        }
     }
       
     @Test

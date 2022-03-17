@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('selenium test') {
             steps {
-              sh "mvn test"
+              bat "mvn test"
             }
         }
 
