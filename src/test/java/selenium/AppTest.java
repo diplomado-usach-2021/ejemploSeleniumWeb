@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -19,11 +20,8 @@ import org.junit.Before;
  */
 public class AppTest 
 {
-    ChromeOptions options = new ChromeOptions();
-        options.addArguments("no-sandbox");
-        options.addArguments("headless");
-
-    private WebDriver driver = new ChromeDriver(options);
+    
+    private WebDriver driver;
     JavascriptExecutor js;
 
     @Before
@@ -33,10 +31,14 @@ public class AppTest
 
         System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
         
-        
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("no-sandbox");
+        options.addArguments("headless");
         System.out.println("Iniciando configuración...");
+
+        WebDriverManager.chromedriver().setup();
         
-        // WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
     }
