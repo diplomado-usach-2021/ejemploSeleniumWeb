@@ -27,7 +27,7 @@ public class AppTest
         System.out.println("seteando ");
 
 
-        System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         WebDriverManager.chromedriver().setup();
         
         ChromeDriver options = new ChromeOptions();
