@@ -28,7 +28,7 @@ public class AppTest
         System.out.println("seteando ");
 
 
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
         
         ChromeOptions options = new ChromeOptions();
         options.addArguments("no-sandbox");
