@@ -30,7 +30,7 @@ public class AppTest
         driver.manage().window().maximize();
     }
 
-    @Test
+   // @Test
     public void google() {
         driver.get("https://www.google.com/");
         driver.findElement(By.name("q")).click();
@@ -49,7 +49,7 @@ public class AppTest
         }
     }
       
-    @Test
+    //@Test
     public void amazon() {
       driver.get("https://www.amazon.com/");
       driver.findElement(By.id("navFooter")).click();
@@ -57,4 +57,12 @@ public class AppTest
       driver.findElement(By.id("twotabsearchtextbox")).sendKeys("the phonix project");
       driver.findElement(By.id("nav-search-submit-button")).click();
     }
+
+    
+    @Test
+    public void automationpractice() {
+        driver.get("http://automationpractice.com/index.php");
+    
+    }
+
 }
