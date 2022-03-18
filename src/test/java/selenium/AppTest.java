@@ -20,25 +20,22 @@ import org.junit.Before;
  */
 public class AppTest 
 {
-    ChromeOptions options = new ChromeOptions();
-    WebDriver driver = new ChromeDriver(options);
+    public static ChromeOptions options = new ChromeOptions();
+    public static WebDriver driver = new ChromeDriver(options);
     JavascriptExecutor js;
 
     @Before
     public void setUp(){
         System.out.println("seteando ");
-
-        System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
-        System.setProperty("webdriver.chrome.whitelistedIps", "");
-        
         options.addArguments("no-sandbox");
         options.addArguments("headless");
         System.out.println("Iniciando configuración...");
 
+        System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.whitelistedIps", "");
+        
         WebDriverManager.chromedriver().setup();
         
-        
-
         driver.manage().window().maximize();
     }
 
