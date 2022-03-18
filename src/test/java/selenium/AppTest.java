@@ -30,7 +30,7 @@ public class AppTest
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         System.out.println("Iniciando configuración...");
-        System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
+        // System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
         ChromeDriver driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
