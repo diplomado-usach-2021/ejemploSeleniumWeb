@@ -26,12 +26,16 @@ public class AppTest
     public void setUp(){
         System.out.println("seteando ");
 
-        ChromeOptions options = new ChromeOptions();
+
+        System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
+        WebDriverManager.chromedriver().setup();
+        
+        ChromeDriver options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         System.out.println("Iniciando configuración...");
-        // System.setProperty("webdriver.chrome.driver","drivers/chromedriver");
-        ChromeDriver driver = new ChromeDriver(options);
+        
+        WebDriver driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
     }
