@@ -19,8 +19,11 @@ import org.junit.Before;
  */
 public class AppTest 
 {
-    
-    private WebDriver driver;
+    ChromeOptions options = new ChromeOptions();
+        options.addArguments("no-sandbox");
+        options.addArguments("headless");
+
+    private WebDriver driver = new ChromeDriver(options);
     JavascriptExecutor js;
 
     @Before
@@ -30,12 +33,10 @@ public class AppTest
 
         System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
         
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("no-sandbox");
-        options.addArguments("headless");
+        
         System.out.println("Iniciando configuración...");
         
-        WebDriver driver = new ChromeDriver(options);
+        // WebDriver driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
     }
