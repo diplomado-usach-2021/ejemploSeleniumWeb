@@ -27,8 +27,10 @@ public class AppTest
     @Before
     public void setUp(){
         System.out.println("seteando ");
-        options.addArguments("no-sandbox");
-        options.addArguments("headless");
+        options.addArguments("--headless");
+        options.addArguments("--whitelisted-ips");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-extensions");
         System.out.println("Iniciando configuración...");
 
         System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
