@@ -30,6 +30,7 @@ public class AppTest
 
 
         System.setProperty("webdriver.chrome.driver", "/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.whitelistedIps", "");
         
         ChromeOptions options = new ChromeOptions();
         options.addArguments("no-sandbox");
