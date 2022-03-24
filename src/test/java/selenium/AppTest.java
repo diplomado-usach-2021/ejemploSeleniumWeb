@@ -113,6 +113,8 @@ public class AppTest
         SimpleDateFormat formatter= new SimpleDateFormat("HHmm");
         Date date = new Date(System.currentTimeMillis());
         System.out.println(formatter.format(date));
+
+        String correo = "correo"+formatter.format(date)+"@gmail.com";
         
         try {
             Thread.sleep(1000);
@@ -128,15 +130,20 @@ public class AppTest
             driver.findElement(By.xpath("/html/body/div/div[2]/div/div[3]/div/p[2]/a[1]")).click();
             Thread.sleep(2000);
             WebElement email_input = driver.findElement(By.id("email_create"));
-            email_input.sendKeys("correo"+formatter.format(date)+"@gmail.com");
+            email_input.sendKeys(correo);
             email_input.submit();
-            Thread.sleep(1000);
+            Thread.sleep(2000);
             WebElement email_validate = driver.findElement(By.id("email"));
 
-            //Thread.sleep(3000);        
-            //assertEquals("correo"+formatter.format(date)+"@pruebas.com", email_validate);
+          //  String correoValidar =  email_validate.getText();
 
-            Thread.sleep(2000);
+          
+            String correoValidar = email_validate.getAttribute("value");
+
+            System.out.println(" correoValidar" +  correoValidar);
+            assertEquals(correo, correoValidar);
+
+            Thread.sleep(3000);
 
             WebElement customer_firstname = driver.findElement(By.id("customer_firstname"));
             customer_firstname.sendKeys("pedro");
@@ -208,6 +215,14 @@ public class AppTest
             Thread.sleep(2000);
           //  driver.findElement(By.className("button btn btn-default button-medium")).click();
             driver.findElement(By.xpath("    /html/body/div/div[2]/div/div[3]/div/form/p/button")).click();
+
+
+            // set de pruebas
+
+            Thread.sleep(1000);
+            System.out.println("correo : " + correo);
+            System.out.println(" correoValidar" +  correoValidar);
+            assertEquals(correo, correoValidar);
         
         } catch (Exception e) {
             System.out.println(e);
