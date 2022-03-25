@@ -198,6 +198,38 @@ public class AppTest
           
             // PENDIENTE QUE LOS DATOS SEAN LOS MISMOS EN DIRECCIÓN
 
+            WebElement address_firstname = driver.findElement(By.className("address_firstname"));  
+            String nombreApellido = address_firstname.getText();
+
+            WebElement address_company = driver.findElement(By.className("address_company"));  
+            String compañia = address_company.getText();
+
+            WebElement address_address1 = driver.findElement(By.className("address_address1"));  
+            String direccion = address_address1.getText();
+
+            WebElement address_city = driver.findElement(By.className("address_city"));  
+            String ciudad = address_city.getText();
+
+            WebElement address_country_name = driver.findElement(By.className("address_country_name"));  
+            String pais = address_country_name.getText();
+
+            WebElement address_phone = driver.findElement(By.className("address_phone"));  
+            String telefono1 = address_phone.getText();
+
+            WebElement address_phone_mobile = driver.findElement(By.className("address_phone_mobile"));  
+            String telefono2 = address_phone_mobile.getText();
+
+            Thread.sleep(2000);
+
+            System.out.println("nombreApellido : " + nombreApellido);
+            System.out.println("compañia : " + compañia);
+            System.out.println("direccion : " + direccion);
+            System.out.println("ciudad : " + ciudad);
+            System.out.println("pais : " + pais);
+            System.out.println("telefono1 : " + telefono1);
+            System.out.println("telefono2 : " + telefono2);
+    
+
             Thread.sleep(2000);
             driver.findElement(By.name("processAddress")).click();
 
@@ -220,6 +252,13 @@ public class AppTest
             System.out.println("correo : " + correo);
             System.out.println(" correoValidar" +  correoValidar);
             assertEquals(correo, correoValidar);
+            assertEquals("pedro dias", nombreApellido);
+            assertEquals("sin compañia", compañia);
+            assertEquals("avenida siempre viva 123 dirección referencia 2", direccion);
+            assertEquals("Santiago, Alabama 92547", ciudad);
+            assertEquals("United States", pais);
+            assertEquals("12345678", telefono1);
+            assertEquals("912345678", telefono2);
         
         } catch (Exception e) {
             System.out.println(e);
